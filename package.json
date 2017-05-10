@@ -1,0 +1,29 @@
+{
+  "name": "pm-webapp-ss",
+  "version": "1.0.0",
+  "description": "A server-side version of my webapp from scratch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sidstumple/pm-webapp-ss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sidstumple/pm-webapp-ss/issues"
+  },
+  "homepage": "https://github.com/Sidstumple/pm-webapp-ss#readme",
+  "dependencies": {
+    "concat-stream": "^1.6.0",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "https": "^1.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0"
+  }
+}
