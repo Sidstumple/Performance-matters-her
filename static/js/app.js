@@ -72,7 +72,7 @@
             userQuery = userQuery.replace(/\s/g, '%20');
 
             //url that only checks shows the results of the query
-            var apiUrl= 'https://www.rijksmuseum.nl/api/nl/collection?key=epHseGj4&q=&ps=50&format=json&imageonly=true&q=' + userQuery;
+            var apiUrl= 'https://www.rijksmuseum.nl/api/nl/collection?key=epHseGj4&q=&ps=6&format=json&imageonly=true&q=' + userQuery;
 
             // the value of 'alles' is 0, so when it's bigger than 0 it should check which filter is applied.
             if(config.materials.value.length > 0){
@@ -107,7 +107,7 @@
             //replace spaces with %20
             userQuery = userQuery.replace(/\s/g, '%20');
             //makes sure api url has the right userquery and adds the value of the selected option
-            var apiUrl = 'https://www.rijksmuseum.nl/api/nl/collection?key=epHseGj4&q=&ps=50&format=json&imageonly=true&q=' + userQuery + '&material=' + value;
+            var apiUrl = 'https://www.rijksmuseum.nl/api/nl/collection?key=epHseGj4&q=&ps=6&format=json&imageonly=true&q=' + userQuery + '&material=' + value;
             // GET data for applied filter
             aja()
             .url(apiUrl)
@@ -138,7 +138,7 @@
             var idRoute = route.slice(12);
 
             //the id has to be placed in the middle of the url
-            var detailUrl= 'https://www.rijksmuseum.nl/api/nl/collection' + idRoute + '?key=epHseGj4&q=&ps=50&format=json';
+            var detailUrl= 'https://www.rijksmuseum.nl/api/nl/collection' + idRoute + '?key=epHseGj4&q=&ps=6&format=json';
 
             aja()
             .url(detailUrl)
