@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Cyd's Single-Page Web App</title>
+    <meta name="description" content="Cyd's Single-Page Web App">
+    <meta name="author" content="Cyd Stumpel">
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800|Scope+One" rel="stylesheet">
+</head> 
+
+<body> 
+    <nav> 
+        <ul id="navUl">
+            
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rijksmuseum">Rijksmuseum Search</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="startScreen" id="home">
+            <h1>Cyd's Single-Page Web App</h1>
+        </section>
+        <section class="rijksmuseum" id="rijksmuseum" >
+            <div class="searchField">
+               <h1>Bekijk alle kunstwerken van het Rijksmuseum!</h1>
+                <p>Voer een zoekterm in & druk op enter:</p>
+                <form class="column" id="getUserQuery">
+                    <input  type="text" id="user-input-field" autofocus required>
+<!--                    <button type="button" id="search_painter">Submit</button>-->
+                </form>
+                <select id="materials">
+                    <option value="">Alles</option>
+                    <option value="olieverf">Olieverf schilderijen</option>
+                    <option value="klei">Keramiek</option>
+                    <option value="inkt">Pentekeningen</option>
+                </select>
+            </div>
+
+            <article id="queryResult">
+                
+            </article>
+            
+            <div id=error></div>
+        </section>
+        <section id="artObject">
+            <article id="detailArt">   
+            </article>      
+        </section>
+    </main>
+
+    <script src="static/js/aja.min.js"></script>
+    <script src="static/js/routie.min.js"></script>
+    <script src="static/js/transparency.min.js"></script>
+    <script src="static/js/handlebars.js"></script>
+    <script src="static/js/app.js"></script>
+    
+    <script id="queryTemplate" type="text/x-handlebars-template">
+        {{#each artObjects}}
+            {{#if webImage}}
+                <div class="media-item" id={{objectNumber}}>
+                    <h1><a href= '#rijksmuseum/{{objectNumber}}'>{{principalOrFirstMaker}}</a></h1>
+                    <p>{{title}}</p>
+                    <img src={{webImage.url}} alt={{longTitle}} />
+                </div>
+            {{else}}
+				
+            {{/if}}
+
+        {{/each}}
+    </script>
+    
+    <script id="detailTemplate" type="text/x-handlebars-template">
+        <div class="detail-item" id={{idroute}}>
+            <img src={{imageSource}} alt={{title}}/>
+            <a href="#rijksmuseum"><img src="img/back.svg" alt="previous-page"></a>
+            <div class="container">
+                <h1>{{title}}</h1>
+                <p>{{description}}</p>
+                <p> Gemaakt door: {{artist}}</p>
+            </div>
+        </div>
+    </script>
+    
+    <script id="errorTemplate" type="text/x-handlebars-template">
+        <div class="error-item">
+            <div class="container">
+                <img src="img/scream.jpg" alt="De Schreeuw, van Edvard Munch" class="error">
+                <div class="text">
+                    <h1>Jammer...</h1>
+                    <p>Er zijn helaas geen resultaten gevonden die overeenkomen met uw zoekterm. Probeert u het nog eens.</p>
+                </div>
+            </div>
+        </div>
+    </script>
+     
+</body>
+</html>

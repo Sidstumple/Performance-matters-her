@@ -1,0 +1,295 @@
+/*Standard destandardizing*/
+body {
+    background: #85BAA1;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+/*article flex container*/
+article {
+    display: flex;
+    max-width: 100vw;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #444;
+}
+
+p {
+    font-family: 'Scope One', serif;
+    font-size: 0.9em;
+    align-self: center;
+}
+
+/*Navigation*/
+nav {
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100vw;
+    position: fixed;
+    z-index: 3;
+}
+
+nav ul {
+    width: 20em;
+    display: flex;
+    flex-direction:  row;
+    justify-content: space-around;
+}
+
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9em;
+    color: white;
+    font-weight: bold;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover, nav ul li a:active {
+    color: #80CED6;
+}
+/*End Navigation*/
+
+/*main, wraps around both sections*/
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+}
+
+
+/*section startscreen*/
+.startScreen {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: url(../../img/molen.jpg) center;
+    background-size: cover;
+}
+
+.startScreen h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0.06em 0.06em 0 #333;
+}
+
+.searchField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background: white;
+    margin-bottom: 1em;
+    margin-top: 4em;
+    height: auto;
+    height: max-content;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.media-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-content: space-around;
+    align-items: flex-start;
+    flex-basis: 22em;
+    margin: 0.5em;
+    padding: 1em;
+    background: white;
+}
+
+.media-item a::after {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    content: '';
+}
+
+.media-item h1 a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    align-items: flex-start;
+    width: 80vw;
+    padding: 1.5em;
+    background: white;
+    position: relative;
+    margin: 0.5em;
+    margin-top: 5em;
+}
+
+.detail-item p {
+    align-self: flex-start;
+}
+
+.detail-item img {
+    width: 50%;
+}
+
+.detail-item a {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*svg previous page*/
+img[alt="previous-page"] {
+    position: relative;
+    width: 4em;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-left: 1em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-left: 1em;
+    margin-right: 3%;
+    height: 100%;
+}
+
+.container h1 {
+    margin-top: 0;
+}
+
+
+input[id="user-input-field"], button {
+    width: 20em;
+    height: 3em;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+input[id="user-input-field"] {
+    padding: 1em;
+}
+
+/*custom button*/
+button {
+    background: none;
+    border: 0.4em #80CED6 solid;
+    font-size: 1em;
+    font-weight: bold;
+    color: #80CED6;
+    text-transform: uppercase;
+}
+
+button[type="submit"]:hover {
+    background: white;
+    color: #80CED6;
+}
+
+input#user-input-field:focus, button:focus {
+    border: 0.4em solid #80CED6; 
+    width: 21em;
+    transition: 0.4s;
+    outline: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.no-photo {
+    position: absolute;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 16em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    width: 20em;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: white !important;
+}
+
+
+select {
+    margin-top: 2em;
+    width: 20em;
+    height: 3em;
+    box-sizing: border-box;
+    padding: 1em;
+    border: 0.4em #80CED6 solid;
+    font-size: 1em;
+}
+
+.error-item {
+    background: white;
+    margin: 1em;
+    padding: 1em;
+}
+
+img.error {
+    width: 30%;
+    height: 100%;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+
+.text {
+    width: 69%;
+    flex-grow: 1;
+}
+
+.error-item > .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
