@@ -89,7 +89,7 @@ browserify index.js > bundle.js
 
 ## Skeleton loading:
 The images from the Rijksmuseum API are very large and high in resolution, that's why they take a long time to load. Because the images take so long to load there is a moment where the height of the image is not reserved. When the image does get processed, the page looks very jumpy.
-![without skeleton loading](/screenshots/noskeleton.png) ![without skeleton loading, image height pushes down next blocks](/screenshots/noskeleton%20jump.png) 
+![without skeleton loading](/screenshots/noskeleton1.png) ![without skeleton loading, image height pushes down next blocks](/screenshots/noskeleton-jump.png) 
 I added skeleton loading to make the page seem to load faster and not be 'jumpy' when the images are loaded.
 
 
