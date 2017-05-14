@@ -3,7 +3,15 @@ A server-side version of my webapp from scratch.
 
 ## Contents:
 1. [Dependencies](#dependencies)
-2. [2. Dev Dependencies](#devdependencies)
+2. [Dev Dependencies](#devdependencies)
+3. [Install](#install)
+4. [How it works](#how-it-works)
+5. [Skeleton loading](#skeleton-loading)
+6. [Performance Audit](#performance-audit)
+7. [Node Minify](#node-minify)
+8. [Service Worker](#service-worker)
+9. [Wishlist](#wishlist)
+
 
 ## [1. Dependencies](#dependencies)
 + [`concat-stream`](https://www.npmjs.com/package/concat-stream)
@@ -16,7 +24,7 @@ A server-side version of my webapp from scratch.
 + [`Browserify`](https://www.npmjs.com/package/browserify)
 + [`node-minify`](https://www.npmjs.com/package/node-minify)
 
-## Install
+## [3. Install](#install)
 - Clone this repository
 - Navigate to the directory in your terminal
 - Add `.env` file:
@@ -33,7 +41,7 @@ node app.js
 ```
 - Use the app at http://localhost:3000/search
 
-## How it works
+## [4. How it works](#how-it-works)
 This app uses [Express](https://www.npmjs.com/package/express) to handle routing. 
 ```javascript
 app.get('/', function (req, res) {
@@ -85,7 +93,7 @@ To edit the client side Javascript with Browserify:
 browserify index.js > bundle.js
 ```
 
-## Skeleton loading:
+## [5. Skeleton loading](#skeleton-loading)
 The images from the Rijksmuseum API are very large and high in resolution, that's why they take a long time to load. Because the images take so long to load there is a moment where the height of the image is not reserved. When the image does get processed, the page looks very jumpy.
 ![without skeleton loading](/screenshots/noskeleton1.png) ![without skeleton loading, image height pushes down next blocks](/screenshots/noskeleton-jump.png) 
 I added skeleton loading to make the page seem to load faster and not be 'jumpy' when the images are loaded.
@@ -99,14 +107,14 @@ img {
 ![with skeleton loading](/screenshots/withskeleton.png)
 ![with skeleton loading, no jump](/screenshots/nojumpskeleton.png)
 
-# Performance Audit
+# [6. Performance Audit](#performance-audit)
 I used my Web App From Scratch assignment as a starting point for my performance audit. I applied the following methods to make the app faster:
 - node-minify
 - service worker
 
 NB. Because the images are requested through the Rijksmuseum API it's not possible to compress them, which would have made the app much faster.
 
-## Node Minify
+### [7. Node Minify](#node-minify)
 `node-minify` is a Node module which minifies JavaScript & CSS files automatically.
 ```javascript
 compressor.minify({
@@ -143,7 +151,7 @@ After both:
 ![after minifying both](/screenshots/afterminifying.png)
 DOMContentLoaded: 10.31 seconds
 
-## Service Worker
+### [8. Service Worker](#service-worker)
 A service worker saves specified cache data. Cached pages are not only loaded faster, they are also available offline.
 Everything is tested on 'Good 2G' speed of Google Chrome's Developer tools to give a more accurate audit.
 
@@ -167,5 +175,5 @@ Viewing uncached page offline:
 - Load: 147 miliseconds
 - Finish: 131 seconds
 
-## Wishlist
+## [9. Wishlist](#wishlist)
 + Giving the user a list of pages they can still view while offline
