@@ -1,15 +1,20 @@
 # Performance Matters-her
 A server-side version of my webapp from scratch.
 
-## Dependencies
+## Contents:
+1. [Dependencies](#dependencies)
+2. [2. Dev Dependencies](#devdependencies)
+
+## [1. Dependencies](#dependencies)
 + [`concat-stream`](https://www.npmjs.com/package/concat-stream)
 + [`dotenv`](https://www.npmjs.com/package/dotenv)
 + [`ejs`](https://www.npmjs.com/package/ejs)
 + [`express`](https://www.npmjs.com/package/express)
 + [`https`](https://www.npmjs.com/package/https)
 
-## Dev Dependencies
+## [2. Dev Dependencies](#devdependencies)
 + [`Browserify`](https://www.npmjs.com/package/browserify)
++ [`node-minify`](https://www.npmjs.com/package/node-minify)
 
 ## Install
 - Clone this repository
@@ -92,8 +97,75 @@ img {
 }
 ```
 ![with skeleton loading](/screenshots/withskeleton.png)
-![with skeleton loading](/screenshots/nojumpskeleton.png)
+![with skeleton loading, no jump](/screenshots/nojumpskeleton.png)
 
+# Performance Audit
+I used my Web App From Scratch assignment as a starting point for my performance audit. I applied the following methods to make the app faster:
+- node-minify
+- service worker
 
+NB. Because the images are requested through the Rijksmuseum API it's not possible to compress them, which would have made the app much faster.
+
+## Node Minify
+`node-minify` is a Node module which minifies JavaScript & CSS files automatically.
+```javascript
+compressor.minify({
+  compressor: 'clean-css',
+  input: 'static/css/styles.css',
+  output: 'static/css/styles-min.css',
+  callback: function (err, min) {}
+});
+
+compressor.minify({
+  compressor: 'gcc',
+  input: 'static/js/bundle.js',
+  output: 'static/js/bundle-min.js',
+  callback: function (err, min) {}
+});
+```
+It takes your normal css/js file and uses it to make a new file with the minified code.
+
+Everything is tested on 'Good 2G' speed of Google Chrome's Developer tools to give a more accurate audit.
+
+Before minifying:
+![before minifying](/screenshots/nominifying.png)
+DOMContentLoaded: 21.03 seconds
+
+After javascript minifying:
+![after minifying javascript](/screenshots/minifyjs.png)
+DOMContentLoaded: 13.45 seconds
+
+After CSS minifying:
+![after minifying CSS](/screenshots/minifycss.png)
+DOMContentLoaded: 33.9 seconds :/
+
+After both:
+![after minifying both](/screenshots/afterminifying.png)
+DOMContentLoaded: 10.31 seconds
+
+## Service Worker
+A service worker saves specified cache data. Cached pages are not only loaded faster, they are also available offline.
+Everything is tested on 'Good 2G' speed of Google Chrome's Developer tools to give a more accurate audit.
+
+Before caching:
+![before caching](/screenshots/normalloadsw.png)
+- Load: 2 min
+- Finish: 2 min
+
+After caching: 
+![before caching](/screenshots/aftercachingsw.png)
+- Load: 766 miliseconds
+- Finish: 1.96 seconds
+
+Viewing cached page offline:
+![before caching](/screenshots/offlinecachedpagesw.png)
+- Load: 718 miliseconds
+- Finish: 1.66 seconds
+
+Viewing uncached page offline: 
+![before caching](/screenshots/offlineversionsw.png)
+- Load: 147 miliseconds
+- Finish: 131 seconds
 
 ## Wishlist
++ Giving the user a list of pages they can still view while offline
