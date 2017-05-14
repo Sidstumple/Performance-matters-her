@@ -3,7 +3,7 @@ A server-side version of my webapp from scratch.
 
 ## Contents:
 1. [Dependencies](#dependencies)
-2. [Dev Dependencies](#devdependencies)
+2. [Dev Dependencies](#dev-dependencies)
 3. [Install](#install)
 4. [How it works](#how-it-works)
 5. [Skeleton loading](#skeleton-loading)
@@ -20,7 +20,7 @@ A server-side version of my webapp from scratch.
 + [`express`](https://www.npmjs.com/package/express)
 + [`https`](https://www.npmjs.com/package/https)
 
-## [Dev Dependencies](#devdependencies)
+## [Dev Dependencies](#dev-dependencies)
 + [`Browserify`](https://www.npmjs.com/package/browserify)
 + [`node-minify`](https://www.npmjs.com/package/node-minify)
 
