@@ -3,11 +3,26 @@ var request = require('request');
 var concat = require('concat-stream');
 var https = require('https');
 var app = express();
+var compressor = require('node-minify');
 
 require('dotenv').config(); //makes apikey invisible
 
 app.use(express.static('./'))
 app.set('view engine', 'ejs'); //render all html via ejs
+
+compressor.minify({
+  compressor: 'clean-css',
+  input: 'static/css/styles.css',
+  output: 'static/css/styles-min.css',
+  callback: function (err, min) {}
+});
+
+compressor.minify({
+  compressor: 'gcc',
+  input: 'static/js/bundle.js',
+  output: 'static/js/bundle-min.js',
+  callback: function (err, min) {}
+});
 
 // for the API url:
 var startUrl = 'https://www.rijksmuseum.nl/api/nl/collection';
