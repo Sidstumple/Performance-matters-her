@@ -3258,11 +3258,6 @@ input.addEventListener('input', function(){
   search(event.target.value);
 });
 
-input.addEventListener('submit', function() {
-  event.preventDefault();
-  console.log('submitted');
-})
-
 function search(event){
   var query = event;
   zoekOpdracht.innerHTML = '';
