@@ -18,6 +18,8 @@ article {
 
 img {
   width: 100%;
+  min-height: 20em;
+  background: teal;
 }
 
 h1 {
