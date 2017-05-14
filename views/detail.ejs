@@ -1,0 +1,14 @@
+<% include partials/head %>
+<article>
+  <% var obj = detail.artObject; %>
+    <div class="detail-item">
+      <img src="<%=obj.webImage.url %>" alt="<%= obj.title %>">
+      <div class="container">
+        <h1><%= obj.principalOrFirstMaker %></h1>
+        <p class="title"><%= obj.title %></p>
+        <p><%= obj.plaqueDescriptionDutch%></p>
+
+      </div>
+    </div>
+</article>
+<% include partials/foot %>
