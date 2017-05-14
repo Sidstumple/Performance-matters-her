@@ -80,7 +80,7 @@ input.addEventListener('input', function(){
 ```
 
 To edit the client side Javascript: 
-Make changes in index.js. 
-Navigate in terminal to `static/js`
-Run this line:
+- Make changes in index.js. 
+- Navigate in terminal to `static/js`
+- Run this line:
 ```browserify index.js > bundle.js```
