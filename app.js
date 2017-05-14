@@ -16,6 +16,7 @@ compressor.minify({
   callback: function (err, min) {}
 });
 
+
 compressor.minify({
   compressor: 'gcc',
   input: 'static/js/bundle.js',
