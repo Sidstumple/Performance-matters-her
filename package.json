@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sidstumple/pm-webapp-ss.git"
+  "author": "Cyd Stumpel",
+  "license": "MIT",
+  "engines": {
+    "node": "v6.10.0",
+    "npm": "3.10.10"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sidstumple/pm-webapp-ss/issues"
   },
