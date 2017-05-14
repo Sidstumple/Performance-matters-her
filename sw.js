@@ -1,4 +1,4 @@
-var cacheName = 'v1.2';
+var cacheName = 'v1.4';
 var cacheFiles = [
   '/static/css/styles.css',
   '/offline/',
