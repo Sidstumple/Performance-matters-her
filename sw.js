@@ -1,7 +1,8 @@
-var cacheName = 'v1.4';
+var cacheName = 'v1.6';
 var cacheFiles = [
-  '/static/css/styles.css',
-  '/offline/',
+  '/static/css/styles-min.css',
+  '/static/js/bundle-min.js',
+  '/offline/'
 ]
 
 self.addEventListener('install', function (event) {
