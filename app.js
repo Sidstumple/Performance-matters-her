@@ -1,5 +1,4 @@
 var express = require('express');
-var request = require('request');
 var concat = require('concat-stream');
 var https = require('https');
 var app = express();
