@@ -4,7 +4,7 @@ var concat = require('concat-stream');
 
 // for the API url:
 var startUrl = 'https://www.rijksmuseum.nl/api/nl/collection';
-var apikey = 'epHseGj4';
+
 var input = document.getElementById('user-input-field');
 var article = document.getElementById('add-content');
 var zoekOpdracht = document.getElementById('zoek-opdracht');
