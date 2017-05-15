@@ -136,7 +136,7 @@ It takes your normal css/js file and uses it to make a new file with the minifie
 Everything is tested on 'Good 2G' speed of Google Chrome's Developer tools to give a more accurate audit.
 
 Before minifying:
-![before minifying](/screenshots/nominifying.png)
+![before minifying](/screenshots/nominify.png)
 DOMContentLoaded: 21.03 seconds
 
 After javascript minifying:
